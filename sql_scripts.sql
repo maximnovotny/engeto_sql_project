@@ -26,16 +26,17 @@ where industry_branch_code is not null
 order by rok desc
 limit 500
 
-
-select name
-from czechia_payroll_industry_branch
-
-select *
-from czechia_payroll_calculation cpc 
-
+--seřadím průměrnou mzdu v letech a povolani 
+select avg(value) as prumerna_mzda, payroll_year as rok, industry_branch_code as J_IT_povolani
+from czechia_payroll 
+where value is not null and payroll_year = 2021 and industry_branch_code = 'J'
+group by payroll_year, industry_branch_code
 
 
 
+
+--seřadím průměrnou mzdu v letech a povolani 
+--potřebuji zjist
 
 
 
